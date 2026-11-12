@@ -1,0 +1,62 @@
+---
+title: "Writing_Funcion"
+output: github_document
+---
+
+```{r setup, include= FALSE}
+
+library(tidyverse)
+library(rvest)
+
+knitr::opt_chuck$set(
+  fig.width = 6,
+  fig.asp = .6,
+  out.width = "90%"
+)
+
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
+
+ptions(
+  ggplot2.continuos.color = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+
+
+```
+
+
+# Do something simple 
+
+```{r}
+x_vec = rnorm(30, mean = 5, sd = 3)
+
+(x_vec - mean(x_vec))/ sd(x_vec)
+
+```
+
+I want a function to compute z-scores
+
+```{r}
+z_scores = function(x) {
+  
+  z =  (x- mean(x)) / sd(x)
+  return(z)
+  
+}
+
+z_scores(x_vec)
+```
+
+Try my function on some other things
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
